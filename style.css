@@ -1,5 +1,10 @@
 :root{
     box-sizing: border-box;
+    font-family: Alegreya;
+    --background:#f3f4f6;
+    --dashboardcolor:#bef264;
+    --secondarycolor:#854d0e;
+    
 }
 
 body{
@@ -7,16 +12,49 @@ body{
     grid-template-columns: 1fr 4fr;
     grid-template-rows: 1fr 5fr;
     grid-template-areas: "dashboard header" "dashboard main";
+    height: 100vh;
 }
 
 .dashboard{
     grid-area:dashboard;
+    background-color: var(--dashboardcolor);
+    display: grid;
+    grid-template-rows: .5fr 2fr 6fr;
+    gap:50px;
+}
+
+.heading{
+    font-size: 35px;
+}
+
+.navigate, .tools{
+    font-size: 25px;
+}
+
+.heading,.navigate>div,.tools>div{
+    display: flex;
+    align-items: center;
+    gap:10px;
+    padding-left: 10px;
+    padding-top: 10px;
+}
+
+.heading img {
+    width: 35px;
+    height: 35px;
+}
+
+.navigate img, .tools img {
+    width: 25px;
+    height: 25px;
 }
 
 .header{
     grid-area:header;
+    background-color: white;
 }
 
 .main{
     grid-area: main;
+    background-color: red;/*temp-replace with  --background*/
 }
