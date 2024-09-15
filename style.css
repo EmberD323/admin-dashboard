@@ -2,9 +2,8 @@
     box-sizing: border-box;
     font-family: Alegreya;
     --background:#f3f4f6;
-    --dashboardcolor:#bef264;
-    --secondarycolor:#854d0e;
-    
+    --dashboardcolor:#d9faa0;
+    --secondarycolor:#a38057;
 }
 
 body{
@@ -44,7 +43,7 @@ body{
     height: 35px;
 }
 
-.navigate img, .tools img {
+.navigate img, .tools img, [src="./images/magnify.svg"],[src="./images/bell-badge.svg"] {
     width: 25px;
     height: 25px;
 }
@@ -52,9 +51,82 @@ body{
 .header{
     grid-area:header;
     background-color: white;
+    box-shadow: 0px 5px 5px 0px #CFD1CF;
+    position: relative;
 }
+
+.penguin{
+    background-color:var(--secondarycolor);
+    border:1px solid rgb(0, 0, 0);    
+    border-radius:50%;
+    -moz-border-radius:50%;
+    -webkit-border-radius:50%;
+}
+
+.top .penguin{
+    width: 40px;
+    height:40px;
+    justify-self: center;
+}
+
+.bottom .penguin {
+    width: 50px;
+    height:50px;
+}
+
+.top{
+    display: grid;
+    grid-template-columns: 0.5fr 7.5fr 3.5fr 1fr 2.5fr;
+    padding-left:30px;
+    padding-top:15px;
+    align-items: center;
+}
+
+input{
+    padding: 5px;
+    border-radius: 5px;
+    border:1px grey solid;
+    background-color: var(--background);
+}
+
+[src="./images/bell-badge.svg"]{
+    justify-self: end;
+    padding-right: 10px;
+}
+
+
+.bottom{
+    display: grid;
+    grid-template-columns: 1fr 7fr 2fr 2fr 2fr; 
+    padding-left:30px;
+    padding-top:20px;
+    padding-right: 60px;
+    align-items: center;
+}
+.headerText,button{
+    font-weight: bold;
+}
+
+.headerText .hi{
+    font-size: 12px;
+}
+
+.headerText .name{
+    font-size: 25px;
+    
+}
+button{
+    background-color: var(--dashboardcolor);
+    border-radius: 10px;
+    border:0;
+    margin: 15px;
+    padding:7.5px
+}
+
+
+
 
 .main{
     grid-area: main;
-    background-color: red;/*temp-replace with  --background*/
+    background-color: var(--background)
 }
