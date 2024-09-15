@@ -23,11 +23,11 @@ body{
 }
 
 .heading{
-    font-size: 35px;
+    font-size: 32.5px;
 }
 
 .navigate, .tools{
-    font-size: 25px;
+    font-size: 22.5px;
 }
 
 .heading,.navigate>div,.tools>div{
@@ -123,10 +123,72 @@ button{
     padding:7.5px
 }
 
-
-
-
 .main{
     grid-area: main;
-    background-color: var(--background)
+    background-color: var(--background);
+    display:grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows:repeat(2,1fr);
+    grid-template-areas: "project announce" "project trending";
+    column-gap: 10px;
+    padding: 15px;
+}
+
+.projects{
+    grid-area: project;
+    display: grid;
+    grid-template-rows: 1fr 10fr;
+}
+
+.projects p, .announce p, .trending p{
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.projectGrid{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: repeat(3,1fr);
+    gap:15px;
+}
+
+.projectGrid>*{
+    background-color: white;
+    border-radius: 5px;
+    /*box-shadow:-5px 0px 0px 0px var(--secondarycolor); might need to add as a border*/
+    border-left:5px solid var(--secondarycolor);
+    box-shadow: 0px 0px 5px 3px #CFD1CF;
+    padding: 25px 15px 0px;
+    display: grid;
+    grid-template-rows: 1fr 3fr 1fr;
+}
+
+.projectGrid img{
+    width: 25px;
+    height: 25px;
+}
+
+.projectGrid .title{
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.projectGrid .words{
+    font-size: 15px;
+}
+
+.projectGrid .icons{
+    justify-self: end;
+
+}
+
+.announce{
+    background-color: aqua;
+    grid-area: announce;
+}
+
+.trending{
+    background-color: greenyellow;
+    grid-area: trending;
+
 }
