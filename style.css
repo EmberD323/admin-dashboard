@@ -23,11 +23,11 @@ body{
 }
 
 .heading{
-    font-size: 32.5px;
+    font-size: 30px;
 }
 
 .navigate, .tools{
-    font-size: 22.5px;
+    font-size: 20px;
 }
 
 .heading,.navigate>div,.tools>div{
@@ -127,7 +127,7 @@ button{
     grid-area: main;
     background-color: var(--background);
     display:grid;
-    grid-template-columns: 2fr .75fr;
+    grid-template-columns: 2fr .66fr;
     grid-template-rows:repeat(2,1fr);
     grid-template-areas: "project announce" "project trending";
     gap: 20px;
@@ -181,17 +181,14 @@ button{
 
 }
 
-.announce{
+.announce, .trending{
     grid-area: announce;
     display: grid;
     grid-template-rows: 1fr 4.5fr;
- 
-    
 }
 
-.announceGrid{
+.announceGrid,.trendingGrid{
     display: grid;
-    grid-template-rows: repeat(3,1fr);
     padding: 20px;
     gap:10px;
     box-shadow: 0px 0px 5px 3px #CFD1CF;
@@ -199,10 +196,8 @@ button{
     background-color: white;
 }
 
-.announceGrid>*{
-   
-
-    
+.announceGrid{
+    grid-template-rows: repeat(3,1fr);
 }
 
 .announce1,.announce2{
@@ -219,7 +214,41 @@ button{
 }
 
 .trending{
-    background-color: greenyellow;
+
     grid-area: trending;
 
+}
+
+.trendingGrid{
+    grid-template-rows: repeat(4,1fr);
+}
+
+.trendingGrid>*{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-areas: "icon words"
+}
+
+.trending .icon{
+    grid-area: icon;
+    background-color:var(--secondarycolor);
+    border:1px solid rgb(0, 0, 0);    
+    border-radius:50%;
+    -moz-border-radius:50%;
+    -webkit-border-radius:50%;
+    width: 40px;
+    height:40px;
+    
+}
+
+.trending.words{
+    grid-area: words;
+}
+.trending .name{
+    font-weight: 500;
+    font-size: 18x;
+}
+
+.trending .projectname{
+    font-size: 15px;
 }
